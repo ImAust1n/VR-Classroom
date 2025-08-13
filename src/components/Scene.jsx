@@ -47,7 +47,7 @@ const Scene = () => {
       />
 
       {/* Center frame with YouTube video (smaller and farther) */}
-      <group position={[0, 0, -1.6]}>
+      <group position={[0, 0, -1.5]}>
         {/* Inner dark panel (slightly smaller) */}
         <mesh position={[0, 0, -0.01]}> 
           <planeGeometry args={[1.2, 0.7]} />
@@ -60,7 +60,7 @@ const Scene = () => {
         </mesh>
 
         {/* YouTube iframe projected in 3D space */}
-        <Html transform distanceFactor={1.8} occlude>
+        <Html transform sprite distanceFactor={1.8} zIndexRange={[200, 200]}>
           <div
             style={{
               width: "640px",
@@ -88,7 +88,7 @@ const Scene = () => {
       </group>
 
       {/* Left screen-like frame (further left, tilted toward user) */}
-      <group position={[-3.0, 0, -1.6]} rotation={[0, 0.35, 0]}>
+      <group position={[-3.0, 0, -1.4]} rotation={[0, 0.35, 0]}>
         {/* Inner dark panel */}
         <mesh position={[0, 0, -0.01]}>
           <planeGeometry args={[1.0, 0.6]} />
@@ -100,7 +100,7 @@ const Scene = () => {
           <meshStandardMaterial color="#606060" />
         </mesh>
         {/* Html image container; ignore pointer events to keep camera free */}
-        <Html transform distanceFactor={2.0} occlude>
+        <Html transform sprite distanceFactor={2.0} zIndexRange={[180, 180]}>
           <div
             style={{
               width: "480px",
@@ -128,7 +128,7 @@ const Scene = () => {
       </group>
       
       {/* Right screen-like frame (further right, tilted toward user) */}
-      <group position={[3.0, 0, -1.6]} rotation={[0, -0.35, 0]}>
+      <group position={[3.0, 0, -1.4]} rotation={[0, -0.35, 0]}>
         {/* Inner dark panel */}
         <mesh position={[0, 0, -0.01]}>
           <planeGeometry args={[1.0, 0.6]} />
@@ -140,7 +140,7 @@ const Scene = () => {
           <meshStandardMaterial color="#606060" />
         </mesh>
         {/* Html scrollable text panel; pointer events enabled for scrolling */}
-        <Html transform distanceFactor={2.0} occlude>
+        <Html transform distanceFactor={2.0} portal={document.body} zIndexRange={[90, 90]}>
           <div
             style={{
               width: "480px",

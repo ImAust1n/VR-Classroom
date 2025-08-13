@@ -126,3 +126,29 @@ body {
   transform: translateY(-20px);
   opacity: 0;
 }
+
+/* Fixed bottom-left VR button */
+.vrFixedBtn {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 9000; /* below loading overlay (9999), above canvas */
+  background: rgba(34, 34, 34, 0.85);
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+}
+
+.vrFixedBtn:hover {
+  background: rgba(34, 34, 34, 0.95);
+}
+
+.vrFixedBtn:active {
+  transform: translateY(1px);
+}
